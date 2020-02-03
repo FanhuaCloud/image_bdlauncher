@@ -2,7 +2,7 @@ FROM codehz/archlinux:latest
 
 LABEL       author="FanHuaCloud" maintainer="1157173310@qq.com"
 
-RUN         adduser -D -h /home/container container
+RUN         useradd -D -h /home/container container
 RUN         pacman -Syu --noconfirm --needed base-devel curl sqlite3 gcc make clang readline python python-pip wget unzip && yes | pacman -Scc && rm -fr /var/lib/pacman/sync/* && pip install ply
 
 USER        container
